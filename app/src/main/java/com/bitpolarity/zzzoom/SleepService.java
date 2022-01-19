@@ -26,9 +26,9 @@ public class SleepService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
 
 
-//        Intent app = new Intent(getApplicationContext(), MainActivity.class);
-//        app.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//        getApplicationContext().startActivity(app);
+        Intent app = new Intent(getApplicationContext(), MainActivity.class);
+        app.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        getApplicationContext().startActivity(app);
 
         Toast.makeText(getApplicationContext(), "Service started", Toast.LENGTH_SHORT).show();
         Intent zzi = new Intent(this, MainActivity.class);
@@ -44,11 +44,11 @@ public class SleepService extends Service {
 
         Handler handler = new Handler();
         handler.postDelayed(() -> {
-            Uri uri = Uri.parse("https://us04web.zoom.us/j/73445245510?pwd=mu58YHpRBIP9E5JS-a4ubP4atzz9R2.1"); // missing 'http://' will cause crashed
+            Uri uri = Uri.parse("https://us04web.zoom.us/j/78802441885?pwd=HlNFUDTjyAFuVa7e40HNKFNoOc-QyC.1"); // missing 'http://' will cause crashed
             Intent i = new Intent(Intent.ACTION_VIEW, uri);
             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(i);
-        }, 5000);
+        }, 500);
 
 
 
