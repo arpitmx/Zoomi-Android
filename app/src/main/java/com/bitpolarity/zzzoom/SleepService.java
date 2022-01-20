@@ -25,7 +25,7 @@ public class SleepService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 
-
+        String link = intent.getStringExtra("linkb");
         Intent app = new Intent(getApplicationContext(), MainActivity.class);
         app.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         getApplicationContext().startActivity(app);
@@ -44,7 +44,8 @@ public class SleepService extends Service {
 
         Handler handler = new Handler();
         handler.postDelayed(() -> {
-            Uri uri = Uri.parse("https://us04web.zoom.us/j/78802441885?pwd=HlNFUDTjyAFuVa7e40HNKFNoOc-QyC.1"); // missing 'http://' will cause crashed
+            Toast.makeText(getApplicationContext(),"Link : "+link,Toast.LENGTH_SHORT).show();
+            Uri uri = Uri.parse(link); // missing 'http://' will cause crashed
             Intent i = new Intent(Intent.ACTION_VIEW, uri);
             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(i);

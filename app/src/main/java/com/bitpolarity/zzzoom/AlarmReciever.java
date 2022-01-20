@@ -20,10 +20,11 @@ public class AlarmReciever extends BroadcastReceiver {
     @Override
     // implement onReceive() method
     public void onReceive(Context context, Intent intent) {
-
+       String linkb = intent.getStringExtra("link");
        Toast.makeText(context.getApplicationContext(), "BroadCast started", Toast.LENGTH_SHORT).show();
 
        Intent serviceI = new Intent(context,SleepService.class);
+       serviceI.putExtra("linkb",linkb);
        context.startService(serviceI);
 
    }
