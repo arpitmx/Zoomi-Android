@@ -19,5 +19,6 @@
     <color name="unclicked">#BA404040</color>
     <color name="heading_blue">#CEFF3941</color>
     <color name="heading_red">#F34091F4</color>
+    <color name="bg_main">#E6E6E6</color>
     <!--    <color name="publist_yellow">#FF0048</color>-->
 </resources>

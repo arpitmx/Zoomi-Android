@@ -1,48 +1,33 @@
 package com.bitpolarity.zzzoom;
 
-import android.annotation.SuppressLint;
-import android.annotation.TargetApi;
 import android.app.AlarmManager;
 import android.app.AlertDialog;
-import android.app.Dialog;
-import android.app.KeyguardManager;
 import android.app.PendingIntent;
-import android.content.ComponentName;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.media.effect.Effect;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.PowerManager;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TimePicker;
 import android.widget.Toast;
-import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.bitpolarity.zzzoom.R;
 import com.bitpolarity.zzzoom.databinding.ActivityMainBinding;
-import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.timepicker.MaterialTimePicker;
 
 import java.util.Calendar;
 
-public class MainActivity extends AppCompatActivity {
+public class AlarmSetActivity extends AppCompatActivity  implements  View.OnClickListener{
 
     TimePicker alarmTimePicker;
     PendingIntent pendingIntent;
@@ -80,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
         setDayselector();
         binding.timePicker.setAnimation(AnimationUtils.loadAnimation(this, R.anim.pop_in));
+
 //        final Window win= getWindow();
 //        win.addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED | WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);
 //        win.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON | WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON);
@@ -91,11 +77,20 @@ public class MainActivity extends AppCompatActivity {
 
         alarmTimePicker =binding.timePicker;
         alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
-        
-        binding.appbar.save.setOnClickListener(view -> {
-              verifyAndSetAlarms();
-        });
 
+        binding.appbar.back.setOnClickListener(this);
+        binding.appbar.save.setOnClickListener(this);
+
+    }
+
+    @Override
+    public void onClick(View v) {
+
+            if (v==binding.appbar.back){
+               onBackPressed();
+            }else if (v == binding.appbar.save){
+                verifyAndSetAlarms();
+            }
     }
 
     void showSnack(){
@@ -351,7 +346,7 @@ public class MainActivity extends AppCompatActivity {
 
             if (!link.equals("")){
 
-            Toast.makeText(MainActivity.this, "Alarm set to ring once!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(AlarmSetActivity.this, "Alarm set to ring once!", Toast.LENGTH_SHORT).show();
 
             Calendar calendar = Calendar.getInstance();
             calendar.set(Calendar.HOUR_OF_DAY, alarmTimePicker.getHour());

@@ -31,7 +31,7 @@ public class SleepService extends Service {
 //        getApplicationContext().startActivity(app);
 
         Toast.makeText(getApplicationContext(), "Service started", Toast.LENGTH_SHORT).show();
-        Intent zzi = new Intent(this, MainActivity.class);
+        Intent zzi = new Intent(this, AlarmSetActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this,0,zzi, 0);
 
         Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)

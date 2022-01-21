@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/bg_main">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/secondary_button_bg"
+        android:layout_margin="10dp"
+        android:elevation="5dp"
+        >
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Computer science"
+            android:layout_gravity="start"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/hmed"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            />
+
+
+
+      <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+          android:weightSum="10"
+        android:layout_margin="5dp"
+        >
+
+
+          <ImageView
+              android:id="@+id/imageView2"
+              android:layout_width="0dp"
+              android:layout_weight="2"
+              android:layout_gravity="center_vertical"
+              android:layout_height="50dp"
+              android:layout_margin="10dp"
+              android:src="@drawable/zoom"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent" />
+
+          <TextView
+              android:id="@+id/textView2"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:fontFamily="@font/hxtrabold"
+              android:text="8:30 AM"
+              android:gravity="center_vertical"
+              android:maxLines="1"
+              android:textColor="#303030"
+              android:layout_weight="5"
+              android:textSize="35dp"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toStartOf="@+id/customSwitch"
+              app:layout_constraintTop_toTopOf="parent" />
+
+          <androidx.appcompat.widget.SwitchCompat
+              android:id="@+id/customSwitch"
+              android:layout_width="0dp"
+              android:layout_weight="3"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center_vertical"
+              android:paddingEnd="10dp"
+              android:thumb="@drawable/thumb"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintTop_toTopOf="parent"
+              app:track="@drawable/track" />
+
+      </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wednesday"
+            android:layout_gravity="start"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="15dp"
+            android:fontFamily="@font/hxtrabold"
+            android:textSize="12dp"
+            android:textColor="@color/heading_blue"
+            />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
