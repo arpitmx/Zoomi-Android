@@ -6,11 +6,15 @@
         <shape
             android:shape="rectangle"
             >
-            <corners android:radius="190dp"/>
 
-            <solid
-                android:color="@color/heading_blue"
+            <corners android:radius="0dp"
                 />
+
+            <gradient
+                android:startColor="#1348E8"
+                android:endColor="@color/heading_red"
+                />
+
 
 
         </shape>

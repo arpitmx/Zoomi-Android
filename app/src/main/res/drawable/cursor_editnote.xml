@@ -3,12 +3,13 @@
     <size android:width="3dp"
         />
     <corners
-        android:radius="8dp"
+        android:radius="10dp"
         />
     <gradient
         android:startColor="@color/publist_yellow"
         android:endColor="#FF0055"
         />
+
 
 </shape>
 

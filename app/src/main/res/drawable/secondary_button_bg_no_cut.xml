@@ -6,11 +6,12 @@
         <shape
             android:shape="rectangle"
             >
-            <corners android:radius="190dp"/>
+
 
             <solid
-                android:color="@color/heading_blue"
+                android:color="#F3FFFFFF"
                 />
+
 
 
         </shape>

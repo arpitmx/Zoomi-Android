@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Zzzoom</string>
+    <string name="app_name">Zoomi</string>
+    <string name="size">20dp</string>
 </resources>

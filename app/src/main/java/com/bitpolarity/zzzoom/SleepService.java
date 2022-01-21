@@ -26,9 +26,9 @@ public class SleepService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
 
         String link = intent.getStringExtra("linkb");
-        Intent app = new Intent(getApplicationContext(), MainActivity.class);
-        app.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        getApplicationContext().startActivity(app);
+//        Intent app = new Intent(getApplicationContext(), MainActivity.class);
+//        app.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//        getApplicationContext().startActivity(app);
 
         Toast.makeText(getApplicationContext(), "Service started", Toast.LENGTH_SHORT).show();
         Intent zzi = new Intent(this, MainActivity.class);

@@ -3,11 +3,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#EFECEC"
-    android:orientation="vertical">
+    android:background="#E6E6E6"
+    android:orientation="vertical"
+
+    >
+
+    <include
+        android:id="@+id/snakb"
+        layout="@layout/snack"
+        android:visibility="gone"
+        />
+
+
 
 
     <include
+        android:id="@+id/appbar"
         layout="@layout/bottombar_set"
         android:layout_gravity="top"
         android:layout_height="wrap_content"
@@ -15,15 +26,20 @@
 
         />
 
+
     <ScrollView
+        android:id="@+id/scroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scrollbars="none"
+        android:scrollbarFadeDuration="5000"
+        android:scrollbarThumbVertical="@color/heading_blue"
+
         >
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
 
 
 
@@ -49,22 +65,68 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:timePickerMode="clock"
-        android:layout_margin="5dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
         android:numbersBackgroundColor="@color/white_550"
-        android:numbersSelectorColor="@color/publist_yellow"
+        android:numbersSelectorColor="#F34091F4"
         android:headerBackground="@drawable/cursor_editnote"
         android:background="@drawable/cursor_editnote"
         android:visibility="visible"
+        android:elevation="0dp"
+
         />
+
+
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_margin="5dp"
+
+        android:layout_margin="7dp"
         android:background="@drawable/secondary_button_bg"
         >
+
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/hb"
+            android:text="Details"
+            android:textColor="@color/heading_blue"
+            android:textSize="18dp"
+
+            />
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_add_link_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="5dp"
+                app:layout_constraintEnd_toStartOf="@+id/save"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/textView"
+                app:layout_constraintTop_toTopOf="parent"
+
+                app:tint="@color/heading_blue" />
+
+        </LinearLayout>
+
+
+
 
         <EditText
             android:id="@+id/link"
@@ -75,34 +137,35 @@
             android:clickable="true"
             android:ellipsize="end"
             android:focusable="true"
+            android:nextFocusDown="@id/bottomsheet_title_tv"
             android:focusedByDefault="true"
             android:fontFamily="@font/hmed"
-
             android:gravity="center_vertical"
-            android:hint="https:zoom.us// paste your link"
+            android:hint="🔗 https:zoom.us// paste your link"
             android:inputType="text"
             android:lines="1"
             android:maxLines="1"
             android:minHeight="60dp"
             android:paddingStart="10dp"
             android:scrollHorizontally="true"
-            android:textColor="@color/textC"
-            android:textSize="18dp" />
+            android:textColor="#F34091F4"
+            android:textSize="17dp" />
 
-    <EditText
-
+    <com.google.android.material.textfield.MaterialAutoCompleteTextView
 
         android:id="@+id/bottomsheet_title_tv"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:hint="Subject (Optional) "
+        android:hint="📔 Subject (Optional) "
         android:focusable="true"
         android:clickable="true"
+
         android:focusedByDefault="true"
-        android:textSize="18dp"
+        android:textSize="17dp"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginTop="5dp"
+        android:layout_marginBottom="8dp"
         android:textColor="@color/textC"
         android:fontFamily="@font/hmed"
         android:background="@drawable/create_note_button_bg"
@@ -112,27 +175,32 @@
 
         />
 
-
-
-
-
     </LinearLayout>
 
-    <Button
-        android:id="@+id/toggleButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="20dp"
-        android:checked="false"
-        android:text="SET"
-        android:textColor="@color/white"
-        android:background="@drawable/secondary_button_bg"
-        />
 
-            <RadioGroup
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+
+            <include
+                android:id="@+id/ds"
+                layout="@layout/days_selector"
+                android:layout_marginStart="7dp"
+                android:layout_marginEnd="7dp"
+                android:layout_marginBottom="5dp"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                />
+
+
+            <include
+
+
+
+         layout="@layout/additional_selector"
+         android:layout_marginStart="7dp"
+         android:layout_marginEnd="7dp"
+            android:layout_marginBottom="10dp"
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         />
 
 
         </androidx.appcompat.widget.LinearLayoutCompat>
