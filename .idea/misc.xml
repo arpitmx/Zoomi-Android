@@ -15,6 +15,7 @@
         <entry key="..\:/Zzzoom/app/src/main/res/drawable/rv_bg.xml" value="0.2760416666666667" />
         <entry key="..\:/Zzzoom/app/src/main/res/drawable/secondary_button_bg.xml" value="0.2604166666666667" />
         <entry key="..\:/Zzzoom/app/src/main/res/drawable/secondary_button_bg_down_cut.xml" value="0.2760416666666667" />
+        <entry key="..\:/Zzzoom/app/src/main/res/drawable/secondary_button_bg_ma.xml" value="0.23802083333333332" />
         <entry key="..\:/Zzzoom/app/src/main/res/drawable/secondary_button_bg_no_cut.xml" value="0.2760416666666667" />
         <entry key="..\:/Zzzoom/app/src/main/res/drawable/secondary_button_bg_snak.xml" value="0.2760416666666667" />
         <entry key="..\:/Zzzoom/app/src/main/res/drawable/secondary_button_bg_top_cut.xml" value="0.2760416666666667" />
@@ -22,10 +23,10 @@
         <entry key="..\:/Zzzoom/app/src/main/res/drawable/thumboff.xml" value="0.22135416666666666" />
         <entry key="..\:/Zzzoom/app/src/main/res/drawable/thumbon.xml" value="0.22135416666666666" />
         <entry key="..\:/Zzzoom/app/src/main/res/drawable/track.xml" value="0.22135416666666666" />
-        <entry key="..\:/Zzzoom/app/src/main/res/layout/activity_home.xml" value="0.264" />
+        <entry key="..\:/Zzzoom/app/src/main/res/layout/activity_home.xml" value="0.25301204819277107" />
         <entry key="..\:/Zzzoom/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Zzzoom/app/src/main/res/layout/additional_selector.xml" value="0.40283140283140284" />
-        <entry key="..\:/Zzzoom/app/src/main/res/layout/alarm_row.xml" value="0.4" />
+        <entry key="..\:/Zzzoom/app/src/main/res/layout/alarm_row.xml" value="0.4831858407079646" />
         <entry key="..\:/Zzzoom/app/src/main/res/layout/bottombar_set.xml" value="0.4" />
         <entry key="..\:/Zzzoom/app/src/main/res/layout/days_selector.xml" value="0.4" />
         <entry key="..\:/Zzzoom/app/src/main/res/layout/home_app_bar.xml" value="0.264" />

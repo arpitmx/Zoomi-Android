@@ -2,23 +2,30 @@
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@color/bg_main">
+   >
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@drawable/secondary_button_bg"
-        android:layout_margin="10dp"
-        android:elevation="5dp"
-        >
+        android:background="@drawable/secondary_button_bg_ma"
+
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
 
 
+    >
+
+<!--        android:layout_marginStart="8dp"-->
+<!--        android:layout_marginEnd="8dp"-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        android:layout_marginBottom="5dp"-->
 
         <TextView
+            android:id="@+id/title_alarm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Computer science"
@@ -26,7 +33,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginStart="10dp"
             android:fontFamily="@font/hmed"
-            android:textSize="15dp"
+            android:textSize="18dp"
             android:textColor="@color/black"
             />
 
@@ -42,29 +49,29 @@
 
 
           <ImageView
-              android:id="@+id/imageView2"
+              android:id="@+id/app_ico"
               android:layout_width="0dp"
               android:layout_weight="2"
               android:layout_gravity="center_vertical"
               android:layout_height="50dp"
               android:layout_margin="10dp"
-              android:src="@drawable/zoom"
+              android:src="@drawable/meet_ico"
               app:layout_constraintBottom_toBottomOf="parent"
               app:layout_constraintStart_toStartOf="parent"
               app:layout_constraintTop_toTopOf="parent" />
 
           <TextView
-              android:id="@+id/textView2"
+              android:id="@+id/time_txt"
               android:layout_width="0dp"
               android:layout_height="wrap_content"
               android:layout_gravity="center"
               android:fontFamily="@font/hxtrabold"
               android:text="8:30 AM"
-              android:gravity="center_vertical"
+              android:gravity="center"
               android:maxLines="1"
               android:textColor="#303030"
               android:layout_weight="5"
-              android:textSize="35dp"
+              android:textSize="33dp"
               app:layout_constraintBottom_toBottomOf="parent"
               app:layout_constraintEnd_toStartOf="@+id/customSwitch"
               app:layout_constraintTop_toTopOf="parent" />
@@ -85,20 +92,27 @@
       </androidx.appcompat.widget.LinearLayoutCompat>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/repeatDays"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Wednesday"
+            android:text="Sun, Mon, Tue, Thu, Fri, Sat"
             android:layout_gravity="start"
             android:layout_marginBottom="10dp"
             android:layout_marginStart="15dp"
-            android:fontFamily="@font/hxtrabold"
-            android:textSize="12dp"
+            android:fontFamily="@font/hb"
+            android:textSize="15dp"
             android:textColor="@color/heading_blue"
             />
 
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
+
+<!--    <View-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="2dp"-->
+<!--        android:background="#164091F4"-->
+<!--        />-->
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>

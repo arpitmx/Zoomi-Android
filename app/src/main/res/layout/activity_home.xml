@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_main"
+    android:background="#F1F1F1"
     tools:context=".alarmlist.HomeActivity">
 
 
@@ -15,28 +15,23 @@
         layout="@layout/home_app_bar"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <include
-        layout="@layout/alarm_row"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        app:layout_constraintBottom_toTopOf="@+id/fab_add_alarm"
-        app:layout_constraintTop_toBottomOf="@+id/include"
-        tools:layout_editor_absoluteX="0dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/alarList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="50dp"
-        android:background="@color/white_550"
+        android:background="@color/bg_main"
+        android:paddingTop="5dp"
+        android:paddingBottom="150dp"
+        android:clipToPadding="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include"
         app:layout_constraintVertical_bias="0.0"
-        android:visibility="gone"
+        android:visibility="visible"
 
         />
 

@@ -1,9 +1,11 @@
 package com.bitpolarity.zzzoom.alarmlist;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -11,16 +13,19 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.bitpolarity.zzzoom.R;
+import com.bitpolarity.zzzoom.db.Alarm;
+import com.bitpolarity.zzzoom.db.AlarmDao;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.List;
 
 public class AlarmAdapter extends RecyclerView.Adapter<AlarmAdapter.AlarmVH> {
 
+    public static final String TAG = "AlarmAdapter";
 
     private Context context;
-    private List<Alarm> noteList;
+    private List<Alarm> alarmList;
     private ULEventListner ul;
-    int lastPosition = Integer.MAX_VALUE;
 
 
     public AlarmAdapter(Context context, ULEventListner ul){
@@ -28,10 +33,10 @@ public class AlarmAdapter extends RecyclerView.Adapter<AlarmAdapter.AlarmVH> {
         this.ul = ul;
     }
 
-//    public void setNoteList(List<Note> noteList){
-//        this.noteList = noteList;
-//        notifyDataSetChanged();
-//    }
+    public void setAlarmList(List<Alarm> alarmList){
+        this.alarmList = alarmList;
+        notifyDataSetChanged();
+    }
 
     @NonNull
     @Override
@@ -46,22 +51,59 @@ public class AlarmAdapter extends RecyclerView.Adapter<AlarmAdapter.AlarmVH> {
     @Override
     public void onBindViewHolder(@NonNull AlarmVH holder, int position) {
 
-//        if (!noteList.get(position).title.isEmpty()){
-//            holder.title.setVisibility(View.VISIBLE);
-//            holder.title.setText(noteList.get(position).title);
-//            holder.desc.setText(noteList.get(position).desc);
-//        }else{
-//            holder.title.setVisibility(View.GONE);
-//            holder.desc.setText(noteList.get(position).desc);
-//            holder.desc.setTextSize(16f);
-//        }
 
-       // setAnimation(holder.itemView,position);
+        Alarm alarm = alarmList.get(position);
+
+        if (alarm.app == 'z'){
+            holder.app_ico.setImageResource(R.drawable.zoom_ico);
+        }else{
+            holder.app_ico.setImageResource(R.drawable.meet_ico);
+        }
+
+        holder.time.setText(alarm.time);
+        holder.repeatTxt.setText(formatRepeatDays(alarm.repeatOn));
+        holder.title.setText(alarm.title);
+
+    //    setAnimation(holder.itemView,position);
+    }
+
+    String formatRepeatDays(String raw){
+        Log.d("AlarmAdapter", "Raw: "+raw);
+        StringBuilder s = new StringBuilder("");
+
+       for (int i = 0; i < raw.length() ; i++){
+           Log.d(TAG, "Char at : "+raw.charAt(i));
+
+               if (raw.charAt(i) == '0') s.append("Sun, ");
+               else if (raw.charAt(i) == '1') s.append("Mon, ");
+               else if (raw.charAt(i) == '2') s.append("Tue, ");
+               else if (raw.charAt(i) == '3') s.append("Wed, ");
+               else if (raw.charAt(i) == '4') s.append("Thu, ");
+               else if (raw.charAt(i) == '5') s.append("Fri, ");
+               else if (raw.charAt(i) == '6') s.append("Sat, ");
+
+//               if (raw.charAt(i) == '0') s.append(" Sun");
+//               else if (raw.charAt(i) == '1') s.append(" Mon");
+//               else if (raw.charAt(i) == '2') s.append(" Tue");
+//               else if (raw.charAt(i) == '3') s.append(" Wed");
+//               else if (raw.charAt(i) == '4') s.append(" Thu");
+//               else if (raw.charAt(i) == '5') s.append(" Fri");
+//               else if (raw.charAt(i) == '6') s.append(" Sat");
+
+           }
+
+        s.replace(s.length()-2,s.length()-1,"");
+
+
+        Log.d(TAG, "Final Days: "+s.toString());
+
+      return s.toString();
+
     }
 
     @Override
     public int getItemCount() {
-        return noteList.size();
+        return alarmList.size();
     }
 
 
@@ -69,14 +111,19 @@ public class AlarmAdapter extends RecyclerView.Adapter<AlarmAdapter.AlarmVH> {
     class AlarmVH extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         TextView title;
-        TextView desc;
+        TextView time;
+        TextView repeatTxt;
+        ImageView app_ico;
         ULEventListner ulEventListner;
 
         public AlarmVH(@NonNull View itemView, ULEventListner ulEventListner) {
             super(itemView);
 
-//            title = itemView.findViewById(R.id.title);
-//            desc = itemView.findViewById(R.id.desc);
+            title = itemView.findViewById(R.id.title_alarm);
+            time= itemView.findViewById(R.id.time_txt);
+            repeatTxt = itemView.findViewById(R.id.repeatDays);
+            app_ico = itemView.findViewById(R.id.app_ico);
+
             this.ulEventListner = ulEventListner;
             itemView.setOnClickListener(this);
         }

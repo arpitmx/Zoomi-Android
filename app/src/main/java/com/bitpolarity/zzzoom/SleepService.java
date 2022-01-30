@@ -50,10 +50,6 @@ public class SleepService extends Service {
             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(i);
         }, 500);
-
-
-
-
         return START_STICKY;
     }
 
