@@ -1,6 +1,10 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'com.google.firebase.crashlytics'
+    id 'com.google.firebase.firebase-perf'
+
+
 }
 
 android {
@@ -53,7 +57,7 @@ dependencies {
     //// FIREBASE ///////////////////////////////////////
 
     //Database
-    implementation platform('com.google.firebase:firebase-bom:28.4.2')
+    implementation platform('com.google.firebase:firebase-bom:29.0.4')
 
     implementation 'com.google.code.gson:gson:2.8.6'
 
@@ -61,6 +65,9 @@ dependencies {
     //Analytics
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.firebase:firebase-crashlytics'
+    implementation 'com.google.firebase:firebase-perf'
+
 
     ////////////////////////
 

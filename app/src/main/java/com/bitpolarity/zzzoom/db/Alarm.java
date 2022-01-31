@@ -33,4 +33,11 @@ public class Alarm {
 
     @ColumnInfo(name = "pendingIntentList")
     public ArrayList<PendingIntent> pendingIntent;
+
+    @ColumnInfo(name = "isRepeated")
+    public Boolean isRepeated;
+
+    @ColumnInfo(name = "isActive")
+    public  Boolean isActive;
+
 }

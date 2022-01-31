@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "622232498088",
+    "project_id": "zoomi-1fc0d",
+    "storage_bucket": "zoomi-1fc0d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:622232498088:android:92c47f1c0eb2e12aebb79d",
+        "android_client_info": {
+          "package_name": "com.bitpolarity.zoomi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "622232498088-7ptt8efa95t9cemt9t7csf3netdt6n18.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWCofL7rjYVX-u_g7qHFQ6DbL8bS1Luug"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "622232498088-7ptt8efa95t9cemt9t7csf3netdt6n18.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
